@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Form = () => {
+  const [information, setinformation] = useState({
+    FirmName: "",
+    Stream: "",
+    SubStream: "",
+    Level: "",
+    Yearsofexperience: "",
+    Certification: "",
+    City: "",
+    Currency: "",
+    Salary: "",
+    Lastbonusreceived: "",
+    Annualequitygrant: "",
+    InternalExternalHire: "",
+    Averageweeklyhours: "",
+    Ethnicity: "",
+    Gender: "",
+  });
+  const handleSubmit = () => {
+    console.log(information);
+  };
   return (
     <div className="container">
       <div className="row text-center">
@@ -90,6 +110,10 @@ const Form = () => {
                 data-required="true"
                 name="Firm Name"
                 placeholder="Firm Name (No LLP  for consistency)"
+                value={information.FirmName}
+                onChange={(e) =>
+                  setinformation({ ...information, FirmName: e.target.value })
+                }
               />
             </div>
           </div>
@@ -124,6 +148,10 @@ const Form = () => {
                 title="Tax, Audit, Advisory, Consulting..."
                 data-type="dropdown"
                 data-required="true"
+                value={information.Stream}
+                onChange={(e) =>
+                  setinformation({ ...information, Stream: e.target.value })
+                }
               >
                 <option value="Consulting">Consulting</option>
                 <option value=" Audit">Audit</option>
@@ -168,6 +196,10 @@ const Form = () => {
                 data-required="true"
                 name="Sub-Stream"
                 placeholder="Private, Public, Strategy, International..."
+                value={information.SubStream}
+                onChange={(e) =>
+                  setinformation({ ...information, SubStream: e.target.value })
+                }
               />
             </div>
           </div>
@@ -202,6 +234,10 @@ const Form = () => {
                 data-required="true"
                 name="Level"
                 placeholder="Senior 1,  Manager 3, Income Partner, Equity Partner...."
+                value={information.Level}
+                onChange={(e) =>
+                  setinformation({ ...information, Level: e.target.value })
+                }
               />
             </div>
           </div>
@@ -229,6 +265,7 @@ const Form = () => {
               sw-outline-none
               sw-width-full
               sw-background-color-ffffff
+
             "
                 id="sw-form-capture-Years of experience"
                 type="text"
@@ -236,6 +273,13 @@ const Form = () => {
                 data-required="true"
                 name="Years of experience"
                 placeholder="Digits only, single decimal point"
+                value={information.Yearsofexperience}
+                onChange={(e) =>
+                  setinformation({
+                    ...information,
+                    Yearsofexperience: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
@@ -272,6 +316,13 @@ const Form = () => {
                 data-selected-text-format="count > 3"
                 data-type="multi_select"
                 data-required="false"
+                value={information.Certification}
+                onChange={(e) =>
+                  setinformation({
+                    ...information,
+                    Certification: e.target.value,
+                  })
+                }
               >
                 <option value="CPA">CPA</option>
                 <option value=" MBA">MBA</option>
@@ -313,6 +364,10 @@ const Form = () => {
                 data-required="false"
                 name="City"
                 placeholder="Full city name is ideal. If not, use LCOL, MCOL, HCOL"
+                value={information.City}
+                onChange={(e) =>
+                  setinformation({ ...information, City: e.target.value })
+                }
               />
             </div>
           </div>
@@ -347,6 +402,10 @@ const Form = () => {
                 title="Currency of compensation"
                 data-type="dropdown"
                 data-required="false"
+                value={information.Currency}
+                onChange={(e) =>
+                  setinformation({ ...information, Currency: e.target.value })
+                }
               >
                 <option value="$ CAD">$ CAD</option>
                 <option value=" $ USD">$ USD</option>
@@ -387,6 +446,10 @@ const Form = () => {
                 data-required="false"
                 name="Salary"
                 placeholder="Only enter digits. No commas or $"
+                value={information.Salary}
+                onChange={(e) =>
+                  setinformation({ ...information, Salary: e.target.value })
+                }
               />
             </div>
           </div>
@@ -421,6 +484,13 @@ const Form = () => {
                 data-required="false"
                 name="Last bonus received"
                 placeholder="Most recent bonus you received. Only enter digits"
+                value={information.Lastbonusreceived}
+                onChange={(e) =>
+                  setinformation({
+                    ...information,
+                    Lastbonusreceived: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
@@ -455,6 +525,13 @@ const Form = () => {
                 data-required="false"
                 name="Annual equity grant"
                 placeholder="Dollar value annual equity grant"
+                value={information.Annualequitygrant}
+                onChange={(e) =>
+                  setinformation({
+                    ...information,
+                    Annualequitygrant: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
@@ -489,6 +566,13 @@ const Form = () => {
                 title="For the last wage increase, were you an..."
                 data-type="dropdown"
                 data-required="false"
+                value={information.InternalExternalHire}
+                onChange={(e) =>
+                  setinformation({
+                    ...information,
+                    InternalExternalHire: e.target.value,
+                  })
+                }
               >
                 <option value="Internal promotion">Internal promotion</option>
                 <option value=" External hire">External hire</option>
@@ -526,6 +610,13 @@ const Form = () => {
                 data-required="false"
                 name="Average weekly hours"
                 placeholder="Total expected workload. Only digits"
+                value={information.Averageweeklyhours}
+                onChange={(e) =>
+                  setinformation({
+                    ...information,
+                    Averageweeklyhours: e.target.value,
+                  })
+                }
               />
             </div>
           </div>
@@ -560,6 +651,10 @@ const Form = () => {
                 title="Choose from the list"
                 data-type="dropdown"
                 data-required="false"
+                value={information.Ethnicity}
+                onChange={(e) =>
+                  setinformation({ ...information, Ethnicity: e.target.value })
+                }
               >
                 <option value="Caucasian">Caucasian</option>
                 <option value=" Black">Black</option>
@@ -604,6 +699,10 @@ const Form = () => {
                 title="Choose from the list"
                 data-type="dropdown"
                 data-required="false"
+                value={information.Gender}
+                onChange={(e) =>
+                  setinformation({ ...information, Gender: e.target.value })
+                }
               >
                 <option value="Male">Male</option>
                 <option value=" Female">Female</option>
@@ -640,6 +739,7 @@ const Form = () => {
               sw-display-inline-block
             "
                 href="javascript:void(0);"
+                onClick={handleSubmit}
               >
                 Submit Entry
                 <div
