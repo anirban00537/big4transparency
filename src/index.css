@@ -3,7 +3,17 @@ html {
   font-size: 16px;
   overflow-x: hidden;
 }
-
+.myCok {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 30px;
+}
+.godgogg {
+  margin-right: 30px;
+}
 body {
   overflow-x: hidden;
 }
@@ -12,8 +22,9 @@ body {
   outline: none;
   width: 60%;
 }
+
 .inputBorder {
-  width: 100%;
+  width: 550px;
   border: 1px solid rgb(94, 94, 94);
   padding: 14px;
   border-radius: 5px;
@@ -33,6 +44,15 @@ body {
   transform: rotate(-90deg) translateY(-80px);
   transform-origin: right top;
 }
+.footerSec {
+  height: 100px;
+  background-color: #000;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .amarsec {
   width: 2300px;
 
@@ -40,7 +60,6 @@ body {
 }
 .chartSection {
   width: 100%;
-  height: 300px;
   border: 1px solid black;
   overflow: scroll;
   width: 100%;
@@ -59,16 +78,42 @@ body {
     max-width: 540px;
   }
 }
+@media (min-width: 400px) {
+  .container {
+    max-width: 540px;
+  }
+  .inputBorder {
+    width: 200px;
+    border: 1px solid rgb(94, 94, 94);
+    padding: 14px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+  }
+}
 
 @media (max-width: 576px) {
   .navbar-brand img {
     max-width: 15rem !important;
+  }
+  .inputBorder {
+    width: 300px;
+    border: 1px solid rgb(94, 94, 94);
+    padding: 14px;
+    border-radius: 5px;
+    margin-bottom: 50px;
   }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+  .inputBorder {
+    width: 600px;
+    border: 1px solid rgb(94, 94, 94);
+    padding: 14px;
+    border-radius: 5px;
+    margin-bottom: 50px;
   }
 }
 
@@ -136,7 +181,9 @@ h5.sw-font-family-default,
 h6.sw-font-family-default {
   font-family: "Open Sans";
 }
-
+.myForma {
+  max-width: 600px;
+}
 span.sw-font-weight-default,
 li.sw-font-weight-default span,
 small.sw-font-weight-default,
@@ -149,7 +196,11 @@ h5.sw-font-weight-default,
 h6.sw-font-weight-default {
   font-weight: 300;
 }
-
+.myFormaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 span.sw-text-color-default,
 li.sw-text-color-default span,
 small.sw-text-color-default,
@@ -300,7 +351,23 @@ textarea.sw-font-weight-default {
   border-bottom-color: #000000 !important;
 }
 .sw-width-4xs {
-  width: 10rem !important;
+  height: 60px;
+  padding: 10px;
+}
+.navMenSec > a {
+  color: white !important;
+  margin-right: 10px;
+}
+.cstmNavMen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-toggler-ico {
+  color: #ffffff !important;
+}
+.cstmNav {
+  background-color: black;
 }
 .home_header1-show-menu {
   right: 0 !important;
