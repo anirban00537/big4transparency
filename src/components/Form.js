@@ -38,7 +38,7 @@ const Form = ({ setloader }) => {
 
   const handleSubmit = async () => {
     const { data } = await axios.post(
-      "https://big4transparancy.herokuapp.com/",
+      "https://projectclearwage.herokuapp.com/",
       information
     );
     setinformation({
@@ -61,7 +61,7 @@ const Form = ({ setloader }) => {
   };
 
   return (
-    <div className=" mainFrmCon">
+    <div className=" mainFrmCon" id="mid">
       <div className="row text-center">
         <div className="col-md-8 offset-md-2">
           <h2
@@ -616,7 +616,7 @@ const Form = ({ setloader }) => {
                   setinformation({ ...information, Gender: e.target.value })
                 }
               >
-                <option value="Male">select one</option>
+                <option>select one</option>
                 <option value="Male">Male</option>
                 <option value=" Female">Female</option>
                 <option value=" Non-binary">Non-binary</option>
@@ -644,10 +644,10 @@ const Form = ({ setloader }) => {
                 <ModalCloseButton />
                 <ModalBody>
                   <h2 className="p text-secondary mb-2">
-                    Before reviewing the data!: We are sponsored by Holtz &
-                    Bernard, an attorney recruitment firm in Miami, FL. Are you
-                    open to hearing about new attorney opportunities? If so,
-                    enter your info and they will reach out!
+                    We are sponsored by Holtz & Bernard, an attorney recruitment
+                    firm in Miami, FL. Are you open to hearing about new
+                    attorney opportunities? If so, enter your info and they will
+                    reach out!
                   </h2>
                   <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">
@@ -676,11 +676,11 @@ const Form = ({ setloader }) => {
                       class="form-control"
                       id="exampleFormControlInput1"
                       placeholder="Last name"
-                      value={information.Lastname}
+                      value={information.lastname}
                       onChange={(e) => {
                         setemailSend({
                           ...emailSend,
-                          Lastname: e.target.value,
+                          lastname: e.target.value,
                         });
                       }}
                     />
@@ -733,7 +733,7 @@ const Form = ({ setloader }) => {
                     onClick={async () => {
                       onClose();
                       await axios.post(
-                        "https://big4transparancy.herokuapp.com/",
+                        "https://projectclearwage.herokuapp.com/email",
                         emailSend
                       );
                     }}

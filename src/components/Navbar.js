@@ -1,4 +1,4 @@
-import appleLogo from "./apple-logo.png";
+import appleLogo from "./clearwage-logo.png";
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,13 +22,13 @@ const Navbar = () => {
           <form className="d-flex">
             <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
-                  Home
+                <a className="nav-link active" aria-current="page" href="#mid">
+                  Contribute
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" href="#">
-                  Some link here
+                <a className="nav-link active" href="#down">
+                  View salaries
                 </a>
               </li>
             </ul>

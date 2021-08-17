@@ -17,8 +17,12 @@ const Cover = () => {
           peers.
         </p>
         <div className="buttonSec">
-          <div>Form</div>
-          <div>View Data</div>
+          <div>
+            <a href="#mid">Form</a>
+          </div>
+          <div>
+            <a href="#down">View Data</a>
+          </div>
         </div>
       </div>
     </div>

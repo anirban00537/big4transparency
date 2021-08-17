@@ -350,8 +350,15 @@ textarea.sw-font-weight-default {
 .sw-border-bottom-color-000000 {
   border-bottom-color: #000000 !important;
 }
+.myQueArea {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+}
 .sw-width-4xs {
-  height: 60px;
+  height: 40px;
   padding: 10px;
 }
 .navMenSec > a {

@@ -18,12 +18,12 @@ const Chart = ({ loader }) => {
   const [info, setinfo] = useState([]);
   const [Loader, setLoader] = useState(false);
   const getAllInfo = async () => {
-    const { data } = await axios.get("https://big4transparancy.herokuapp.com/");
+    const { data } = await axios.get("https://projectclearwage.herokuapp.com/");
     setinfo(data);
   };
   const searchInfo = async (keyword) => {
     const { data } = await axios.get(
-      `https://big4transparancy.herokuapp.com/search/${keyword}`
+      `https://projectclearwage.herokuapp.com/search/${keyword}`
     );
     setinfo(data);
   };
@@ -31,7 +31,7 @@ const Chart = ({ loader }) => {
     getAllInfo();
   }, [loader]);
   return (
-    <div className="container chartCon">
+    <div className="container chartCon mb-5">
       <div className="inputBorder">
         <i class="fas fa-search cstmSer"></i>
         <input
@@ -42,7 +42,31 @@ const Chart = ({ loader }) => {
           onChange={(e) => searchInfo(e.target.value)}
         />
       </div>
-      <div className="chartSection">
+
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        onChange={async (e) => {
+          const { data } = await axios.get(
+            `https://projectclearwage.herokuapp.com/my/sort/${e.target.value}`
+          );
+          setinfo(data);
+          console.log(data, "posti");
+        }}
+      >
+        <option selected>Sort table data</option>
+        <option value="FirmName">FIRM NAME</option>
+        <option value="Position">POSITION</option>
+        <option value="Mainpracticearea">MAIN PRACTICE AREA </option>
+        <option value="Plaintiff">PLAINTIFF, DEFENSE OR OTHER </option>
+        <option value="City">CITY </option>
+        <option value="State">STATE </option>
+
+        <option value="Ethnicity">ETHNICITY </option>
+        <option value="Gender">GENDER </option>
+      </select>
+
+      <div className="chartSection" id="down">
         <Table variant="striped" w={3256} colorScheme="gray">
           <Thead>
             <Tr>
@@ -61,7 +85,7 @@ const Chart = ({ loader }) => {
             </Tr>
           </Thead>
           <Tbody>
-            {info.map((i) => (
+            {info?.map((i) => (
               <Tr>
                 <Td>{i?.FirmName}</Td>
                 <Td>{i?.Position}</Td>

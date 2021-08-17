@@ -14,7 +14,7 @@ const Home = () => {
       <Cover />
       <Form setloader={setloader} />
       <Chart loader={loader} />
-      <Gsheet />
+      {/* <Gsheet /> */}
       <Footer />
     </div>
   );
